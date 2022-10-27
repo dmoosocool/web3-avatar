@@ -3,6 +3,7 @@ import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify
 import { ConfigService } from '@nestjs/config'
 import { AppModule } from './app.module'
 import { Logger } from '@nestjs/common'
+import { join } from 'fs'
 
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter())
@@ -10,7 +11,7 @@ async function bootstrap() {
   const PORT = config.get<number>('port')
   const logger = new Logger('Bootstrap')
 
-  app.useStaticAssets({ root: 'public' })
+  app.useStaticAssets({ root: join(process.cwd(), 'public') })
   await app.listen(PORT, '0.0.0.0')
   logger.log(`Web3-Avatar is running on http://0.0.0.0:${PORT}`)
 }
