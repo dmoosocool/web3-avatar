@@ -10,6 +10,7 @@ async function bootstrap() {
   const PORT = config.get<number>('port')
   const logger = new Logger('Bootstrap')
 
+  app.useStaticAssets({ root: 'public' })
   await app.listen(PORT, '0.0.0.0')
   logger.log(`Web3-Avatar is running on http://0.0.0.0:${PORT}`)
 }
