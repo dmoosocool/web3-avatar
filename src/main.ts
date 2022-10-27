@@ -3,7 +3,7 @@ import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify
 import { ConfigService } from '@nestjs/config'
 import { AppModule } from './app.module'
 import { Logger } from '@nestjs/common'
-import { join } from 'fs'
+import { join } from 'path'
 
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter())
