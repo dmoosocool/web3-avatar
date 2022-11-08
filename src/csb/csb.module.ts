@@ -7,5 +7,6 @@ import { HttpModule } from '@nestjs/axios'
   imports: [HttpModule],
   providers: [CsbService],
   controllers: [CsbController],
+  exports: [CsbService],
 })
 export class CsbModule {}

@@ -7,5 +7,6 @@ import { EnsService } from './ens.service'
   imports: [HttpModule],
   providers: [EnsService],
   controllers: [EnsController],
+  exports: [EnsService],
 })
 export class EnsModule {}

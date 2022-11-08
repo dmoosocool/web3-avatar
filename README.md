@@ -45,6 +45,35 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Query Avatar
+```grahql
+query avatar($search: String!) {
+	avatar(addressOrNs: $search) {
+    address
+    ens {
+      ...NameServiceInput
+    }
+    csb {
+      ...NameServiceInput
+    }
+    lens {
+      ...NameServiceInput
+    }
+  }
+}
+
+fragment NameServiceInput on NameService {
+	handle,
+  avatar
+}
+```
+### Query Variables
+```json
+{
+  "search": "dmoosocool.eth"
+}
+```
+
 ## Test
 
 ```bash

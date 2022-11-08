@@ -1,0 +1,19 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type NameService {
+  handle: String!
+  avatar: String!
+}
+
+type Avatar {
+  address: String!
+  ens: NameService!
+  csb: NameService!
+  lens: NameService!
+}
+
+type Query {
+  avatar(addressOrNs: String!): Avatar!
+}

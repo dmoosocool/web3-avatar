@@ -7,5 +7,6 @@ import { LensController } from './lens.controller'
   imports: [HttpModule],
   providers: [LensService],
   controllers: [LensController],
+  exports: [LensService],
 })
 export class LensModule {}
