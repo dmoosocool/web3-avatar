@@ -1,12 +1,12 @@
 import { Module, CacheModule } from '@nestjs/common'
 import { HttpModule } from '@nestjs/axios'
 import { ConfigService } from '@nestjs/config'
-import { GraphQLModule } from '@nestjs/graphql'
-import GraphQLJSON from 'graphql-type-json'
-import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo'
+// import { GraphQLModule } from '@nestjs/graphql'
+// import GraphQLJSON from 'graphql-type-json'
+// import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import * as RedisStore from 'cache-manager-redis-store'
-import { join } from 'path'
+// import { join } from 'path'
 
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
@@ -27,14 +27,14 @@ import { Avatar } from './avatar/avatar.entity'
       url: String(process.env.REDIS_URL),
       isGlobal: true,
     }),
-    GraphQLModule.forRoot<ApolloDriverConfig>({
-      driver: ApolloDriver,
-      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
-      // resolvers: { JSON: GraphQLJSON },
-      buildSchemaOptions: {
-        dateScalarMode: 'timestamp',
-      },
-    }),
+    // GraphQLModule.forRoot<ApolloDriverConfig>({
+    //   driver: ApolloDriver,
+    //   autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+    //   // resolvers: { JSON: GraphQLJSON },
+    //   buildSchemaOptions: {
+    //     dateScalarMode: 'timestamp',
+    //   },
+    // }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],

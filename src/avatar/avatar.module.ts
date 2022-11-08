@@ -4,11 +4,12 @@ import { CsbModule } from '../csb/csb.module'
 import { EnsModule } from '../ens/ens.module'
 import { LensModule } from '../lens/lens.module'
 import { Avatar } from './avatar.entity'
-import { AvatarResolver } from './avatar.resolver'
 import { AvatarService } from './avatar.service'
+import { AvatarController } from './avatar.controller'
 
 @Module({
   imports: [CsbModule, EnsModule, LensModule, TypeOrmModule.forFeature([Avatar])],
-  providers: [AvatarResolver, AvatarService],
+  providers: [AvatarService],
+  controllers: [AvatarController],
 })
 export class AvatarModule {}
