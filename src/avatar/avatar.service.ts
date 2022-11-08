@@ -1,14 +1,14 @@
+import { Repository } from 'typeorm'
 import { Injectable, HttpException, Logger, Inject } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 import { InjectRepository } from '@nestjs/typeorm'
 import { isEthereumAddress } from 'class-validator'
-import { CsbService } from 'src/csb/csb.service'
-import { Repository } from 'typeorm'
+import { CsbService } from '@/csb/csb.service'
+import { EnsService } from '@/ens/ens.service'
+import { LensService } from '@/lens/lens.service'
+import { getNS } from '@/utils'
 import { Avatar } from './avatar.entity'
 import { NameService } from './inputs/name-service.input'
-import { EnsService } from 'src/ens/ens.service'
-import { LensService } from 'src/lens/lens.service'
-import { getNS } from 'src/utils'
 
 type TAvatarInput = {
   address?: string
