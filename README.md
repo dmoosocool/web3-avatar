@@ -46,46 +46,28 @@ $ npm run start:prod
 ```
 
 ## Query Avatar
-```grahql
-query avatar($search: String!) {
-	avatar(addressOrNs: $search) {
-    address
-    ens {
-      ...NameServiceInput
-    }
-    csb {
-      ...NameServiceInput
-    }
-    lens {
-      ...NameServiceInput
-    }
-  }
-}
+[https://www.buidl.love/avatar/0xe584ca8f30b93b3ed47270297a3e920e2d6d25f0](https://www.buidl.love/avatar/0xe584ca8f30b93b3ed47270297a3e920e2d6d25f0)
 
-fragment NameServiceInput on NameService {
-	handle,
-  avatar
-}
-```
-### Query Variables
+### result
 ```json
 {
-  "search": "dmoosocool.eth"
+  "_id": "636a87c4e83079662b70045c",
+  "address": "0xe584ca8f30b93b3ed47270297a3e920e2d6d25f0",
+  "ens": {
+    "handle": "dmoosocool.eth",
+    "avatar": "https://gateway.ipfs.io/ipfs/QmSX9QiwjTGBk5m22UscTg3vrbMwUfFsmxVzMH57hkPD5U/1025.png"
+  },
+  "csb": {
+    "handle": "dmoo.csb",
+    "avatar": "https://lens.infura-ipfs.io/ipfs/bafkreid5l4tpl2sefl4sgtmv44ksgsbf56lpzxlh6nbpdmqnclnuw6hu6q"
+  },
+  "lens": {
+    "handle": "dmoosocool.lens",
+    "avatar": "https://lens.infura-ipfs.io/ipfs/bafkreiho6hqb6dcy3fogjc77k262dxi42u2xzaggv5fdsnvrhviles5weu"
+  }
 }
 ```
 
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
 
 ## Support
 
